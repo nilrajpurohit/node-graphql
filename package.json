@@ -1,17 +1,35 @@
 {
-  "name": "nodegraphql",
+  "name": "lco-graphql",
   "version": "1.0.0",
-  "description": "",
+  "description": "a standard babel setup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js --exec babel-node -e js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "babel",
+    "es6"
+  ],
+  "author": "hitesh choudhary",
   "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  },
   "dependencies": {
     "express": "^4.18.1",
-    "mongodb": "^4.6.0",
-    "mongoose": "^6.3.3"
-  }
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.5.0",
+    "nanoid": "^3.3.4",
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilrajpurohit/node-graphql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nilrajpurohit/node-graphql/issues"
+  },
+  "homepage": "https://github.com/nilrajpurohit/node-graphql#readme"
 }
