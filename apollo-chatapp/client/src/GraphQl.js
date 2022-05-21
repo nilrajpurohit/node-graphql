@@ -1,7 +1,7 @@
-import { useQuery,gql } from "@apollo/client";
+import { useSubscription,gql } from "@apollo/client";
 
 const GET_MESSAGES = gql`
-query{
+subscription{
     messages{
         id
         content
@@ -10,8 +10,14 @@ query{
 }
 `;
 
-const Messages = ({user}) =>{
-    const {data} = useQuery(GET_MESSAGES);
+export const POST_MESSAGE = gql`
+mutation ($user:String!,$content:String!) {
+    postMessage(user:$user,content:$content)
+}
+`;
+
+export const Messages = ({user}) =>{
+    const {data} = useSubscription(GET_MESSAGES);
     if (!data){
         return null;
     }
@@ -54,5 +60,3 @@ const Messages = ({user}) =>{
     );
     // return JSON.stringify(data);
 }
-
-export default Messages;
